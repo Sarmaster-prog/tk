@@ -1,3 +1,4 @@
+
 from tkinter import *
 
 root = Tk()
@@ -44,5 +45,18 @@ canvas.create_rectangle(100, 150, 125, 350, fill="brown", width=3)
 canvas.create_rectangle(75, 150, 150, 270, fill="green", width=3)
 canvas.create_rectangle(90, 130, 135, 150, fill="green", width=3)
 canvas.create_rectangle(90, 270, 135, 290, fill="green", width=3)
+
+##Создаем солнце
+ob = canvas.create_oval(10, 10, 70, 70, fill="yellow", outline="black")
+
+
+##Функция движения
+def move():
+    canvas.move(ob, 1, 0)
+    canvas.after(20, move)
+
+
+##Вызов функции движения
+move()
 
 root.mainloop()
